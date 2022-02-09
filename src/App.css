@@ -1,38 +1,31 @@
-.App {
+@font-face {
+  font-family: "Mulish";
+  src: local("Mulish"),
+    url("./assets/fonts/Mulish/Mulish-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Mulish-Italic";
+  src: local("Mulish"),
+    url("./assets/fonts/Mulish/Mulish-Italic-VariableFont_wght.ttf")
+      format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Mulish";
+}
+
+/* .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
+} */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* #b4e0e8 blue header*/
+/* #f7f7f7 grey header*/
+/* #eff7fa blue background */
+/* #f3f3f3 grey background */
+/* #fcfcfc grey section*/
+/* #eef4e8 green background */
