@@ -7,6 +7,25 @@ import randomQuoteGenerator from "../../assets/images/projects/randomQuoteGenera
 import eCommerceWebSite from "../../assets/images/projects/eCommerceWebSite.png";
 
 const Works = () => {
+    const anchors = [{
+        starWars: "https://github.com/leralys/DI_Bootcamp/tree/main/MiniProject_StarWarsWebApp"
+    },
+    {
+        todo: "https://github.com/leralys/DI_Bootcamp/tree/main/MiniProject_SpecialToDoList"
+    },
+    {
+        ecommerce: "https://github.com/leralys/hackathon2"
+    }, {
+        weather: "https://github.com/leralys/DI_Bootcamp/tree/main/HeroloAssignment_WeatherApp/weather-app/src"
+    }, {
+        memoryGamePairs: "https://github.com/leralys/mind_game"
+    }, {
+        quotes: "https://github.com/leralys/DI_Bootcamp/tree/main/Week8/Week8Day5/MiniProject-RandomQuoteGenerator/quote-generator/src"
+    }
+
+
+
+    ]
     return (
         <div className="works" id="works">
             <h1>More of my works</h1>
