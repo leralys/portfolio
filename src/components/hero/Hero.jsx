@@ -2,7 +2,6 @@ import photo from "../../assets/images/photo.jpg";
 import bracketsSign from "../../assets/images/bracketsSign.png";
 import downArrow from "../../assets/images/downArrow.png";
 import "./hero.scss";
-{/* <img src={photo} /> */ }
 const Hero = () => {
     return (
         <div className="hero" id="hero">
