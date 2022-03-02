@@ -1,16 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './assets/fonts/Mulish/Mulish-Italic-VariableFont_wght.ttf';
-import './assets/fonts/Mulish/Mulish-VariableFont_wght.ttf';
-import Header from './Components/layout/Header';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Header />
       <Routes>
         <Route path="/" element={<App />} />
         <Route
@@ -20,5 +15,5 @@ ReactDOM.render(
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

@@ -1,0 +1,49 @@
+.technologies {
+  background-color: #feffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 50px;
+    margin-top: 65px;
+    margin-bottom: 15px;
+    color: #17252a;
+  }
+  .container {
+    width: 60%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .item {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 1px solid #d5d5d5;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 1s ease;
+      opacity: 1;
+      margin: 10px;
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: 0.85;
+      }
+      img {
+        width: 90%;
+        object-fit: contain;
+
+        #react {
+          color: aqua;
+        }
+      }
+    }
+  }
+}

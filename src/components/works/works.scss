@@ -1,0 +1,62 @@
+@import "../../global.scss";
+
+.works {
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 50px;
+    margin: 65px 50px;
+    color: #17252a;
+  }
+  .container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .item {
+      width: 350px;
+      height: 220px;
+      border-radius: 20px;
+      border: 1px solid #d5d5d5;
+      margin: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #feffff;
+      position: relative;
+
+      h3 {
+        position: absolute;
+        font-size: 25px;
+        font-weight: 300;
+
+        a {
+          font-size: inherit;
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      &:hover {
+        background: #17252a;
+
+        img {
+          opacity: 0.2;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
