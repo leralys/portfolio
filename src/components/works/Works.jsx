@@ -52,7 +52,7 @@ const Works = () => {
                     <img src={randomQuoteGenerator} alt="Random Quotes Generator" />
                     <h3>
                         <a href="https://github.com/leralys/DI_Bootcamp/tree/main/Week8/Week8Day5/MiniProject-RandomQuoteGenerator/quote-generator/src" target="_blank" rel="noreferrer">
-                            Random Quotes Generator
+                            Quotes Generator
                         </a>
                     </h3>
                 </div>
