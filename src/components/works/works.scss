@@ -7,38 +7,102 @@
   align-items: center;
 
   h1 {
-    font-size: 50px;
-    margin: 65px 30px;
+    font-size: 40px;
+    margin-top: 65px;
     color: #17252a;
+    overflow: hidden;
+    z-index: 1;
+
+    @include xl {
+      font-size: 50px;
+    }
+    @include md {
+      margin-top: 40px;
+      font-size: 30px;
+    }
+    @include xs {
+      font-size: 30px;
+    }
+    @include xxs {
+      font-size: 20px;
+    }
   }
   .container {
-    width: 80%;
+    margin-top: 30px;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 
+    @include xl {
+      width: 80%;
+    }
+    @include md {
+      width: 95%;
+    }
+    @include xxs {
+      margin-top: 15px;
+    }
+
     .item {
-      width: 300px;
-      height: 200px;
+      width: 250px;
+      height: 180px;
       border-radius: 20px;
-      border: 1px solid #d5d5d5;
+      border: 1px solid $lightGreyColor;
       margin: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #feffff;
+      color: $lightBlueColor;
       position: relative;
 
-      h3 {
+      @include xl {
+        width: 300px;
+        height: 220px;
+      }
+      @include lg {
+        width: 220px;
+        height: 150px;
+      }
+      @include md {
+        width: 150px;
+        height: 100px;
+      }
+      @include xxs {
+        width: 100px;
+        height: 60px;
+        border-radius: 10px;
+      }
+      div {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
         position: absolute;
-        font-size: 25px;
+        font-size: 18px;
         font-weight: 300;
+        word-break: break-word;
+        text-align: center;
 
+        @include xl {
+          font-size: 21px;
+        }
+        @include lg {
+          font-size: 16px;
+        }
+        @include md {
+          font-size: 12px;
+        }
         a {
           font-size: inherit;
           text-decoration: none;
           color: inherit;
+        }
+        .demo {
+          color: $mainColor;
         }
       }
 
@@ -54,7 +118,7 @@
 
         img {
           opacity: 0.2;
-          z-index: 0;
+          z-index: 0; //hides image behind the text
         }
       }
     }

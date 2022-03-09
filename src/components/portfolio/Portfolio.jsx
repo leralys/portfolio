@@ -9,32 +9,24 @@ const Portfolio = () => {
             id: "1",
             icon: "/carousel/dog.png",
             title: "Check-in app for dog owners",
-            desc:
-                "React, Redux, Node.js server with Express deployed on Heroku, PostgreSQL, Sequelize ORM,JWT authentication, Mapbox GL JS map, Supercluster library.",
-            img:
-                "/carousel/bestBuddiesCarousel.png",
+            desc: "React, Redux, Node.js server with Express deployed on Heroku, PostgreSQL, Sequelize ORM,JWT authentication, Mapbox GL JS map, Supercluster library.",
+            img: "/carousel/bestBuddiesCarousel.png",
             link: "https://bestbuddies.netlify.app/"
-        },
-        {
+        }, {
             id: "2",
             icon: "/carousel/movie.png",
             title: "Movie Search App",
-            desc:
-                "React, Redux, OMDb API",
-            img:
-                "/carousel/movieSearchApp.png",
+            desc: "React, Redux, OMDb API",
+            img: "/carousel/movieSearchApp.png",
             link: "https://github.com/leralys/DI_Bootcamp/tree/main/MiniProject_MovieSearchApp/movie-search-app"
-        },
-        {
+        }, {
             id: "3",
             icon: "/carousel/calculator.png",
             title: "JavaScript Calculator",
-            desc:
-                "Javascript, HTML5, CSS3",
-            img:
-                "/carousel/javaScriptCalculator.png",
+            desc: "Javascript, HTML5, CSS3",
+            img: "/carousel/javaScriptCalculator.png",
             link: "https://codepen.io/leralys/full/jOBrNbL"
-        },
+        }
     ];
     const handleClick = (way) => {
         way === "left"
@@ -51,7 +43,7 @@ const Portfolio = () => {
                             <div className="left">
                                 <div className="leftContainer">
                                     <div className="imgContainer">
-                                        <img src={d.icon} alt="" />
+                                        <img src={d.icon} alt="icon" />
                                     </div>
                                     <h2>{d.title}</h2>
                                     <p>{d.desc}</p>

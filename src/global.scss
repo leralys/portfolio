@@ -1,4 +1,50 @@
+// color palette
 $mainColor: #3aafa9;
+$darkColor: #17252a;
+$darkCyanColor: #2b7a78;
+$lightBlueColor: #def2f1;
+$lightColor: #feffff;
+$lightGreyColor: #d5d5d5;
+
+// breakpoints
+$xl: 1280px;
+$lg: 1024px;
+$md: 768px;
+$sm: 600px;
+$xs: 416px;
+$xxs: 375px;
+
+// mixins for responsive layout
+@mixin xl {
+  @media (min-width: #{$xl}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (max-width: #{$lg}) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: #{$md}) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (max-width: #{$sm}) {
+    @content;
+  }
+}
+@mixin xs {
+  @media (max-width: #{$xs}) {
+    @content;
+  }
+}
+@mixin xxs {
+  @media (max-width: #{$xxs}) {
+    @content;
+  }
+}
 
 /* #b4e0e8 blue header*/
 /* #f7f7f7 grey header*/
@@ -7,10 +53,3 @@ $mainColor: #3aafa9;
 /* #fcfcfc grey section*/
 /* #eef4e8 green background */
 /* yellow background #fef7db */
-
-// color palette
-// #17252a; ~black
-// #2b7a78; dark cyan
-// #3aafa9; cyan
-// #def2f1; light blue
-// #feffff; white
