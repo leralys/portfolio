@@ -83,16 +83,17 @@
           p {
             font-size: 20px;
           }
-        }
-        span {
-          font-size: 22px;
-          font-weight: 600;
-          text-decoration: underline;
-          justify-self: flex-end;
-
-          a {
-            color: inherit;
-            text-decoration: none;
+          .links {
+            font-size: 22px;
+            font-weight: 600;
+            text-decoration: underline;
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+            a {
+              color: inherit;
+              text-decoration: none;
+            }
           }
         }
 

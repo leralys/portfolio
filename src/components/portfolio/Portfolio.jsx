@@ -11,21 +11,24 @@ const Portfolio = () => {
             title: "Check-in app for dog owners",
             desc: "React, Redux, Node.js server with Express deployed on Heroku, PostgreSQL, Sequelize ORM,JWT authentication, Mapbox GL JS map, Supercluster library.",
             img: "/carousel/bestBuddiesCarousel.png",
-            link: "https://bestbuddies.netlify.app/"
+            code: "https://github.com/leralys/bestBuddiesApp",
+            demo: "https://bestbuddies.netlify.app/",
         }, {
             id: "2",
             icon: "/carousel/movie.png",
             title: "Movie Search App",
             desc: "React, Redux, OMDb API",
             img: "/carousel/movieSearchApp.png",
-            link: "https://github.com/leralys/DI_Bootcamp/tree/main/MiniProject_MovieSearchApp/movie-search-app"
+            code: "https://github.com/leralys/DI_Bootcamp/tree/main/MiniProject_MovieSearchApp/movie-search-app",
+            demo: "https://findmovieapp.netlify.app/"
         }, {
             id: "3",
-            icon: "/carousel/calculator.png",
-            title: "JavaScript Calculator",
-            desc: "Javascript, HTML5, CSS3",
-            img: "/carousel/javaScriptCalculator.png",
-            link: "https://codepen.io/leralys/full/jOBrNbL"
+            icon: "/carousel/game.png",
+            title: "JavaScript Memory Game",
+            desc: "Javascript, HTML5, CSS3. Developers Institute Hackathon winner",
+            img: "/carousel/findThePairGame.png",
+            code: "https://github.com/leralys/mind_game",
+            demo: "https://codepen.io/leralys/full/MWEGZga"
         }
     ];
     const handleClick = (way) => {
@@ -47,9 +50,10 @@ const Portfolio = () => {
                                     </div>
                                     <h2>{d.title}</h2>
                                     <p>{d.desc}</p>
-                                    <span>
-                                        <a href={d.link} target="_blank" rel="noreferrer">Link</a>
-                                    </span>
+                                    <div className="links">
+                                        <a href={d.demo} target="_blank" rel="noreferrer">Demo</a>
+                                        <a href={d.code} target="_blank" rel="noreferrer">Code</a>
+                                    </div>
                                 </div>
                             </div>
                             <div className="right">
