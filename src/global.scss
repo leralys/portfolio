@@ -9,9 +9,12 @@ $lightGreyColor: #d5d5d5;
 // breakpoints
 $xl: 1280px;
 $lg: 1024px;
+$eighttwenty: 820px;
 $md: 768px;
 $sm: 600px;
-$xs: 416px;
+$fivehundred: 500px;
+$fourseventyfive: 475px;
+$xs: 425px;
 $xxs: 375px;
 
 // mixins for responsive layout
@@ -25,6 +28,11 @@ $xxs: 375px;
     @content;
   }
 }
+@mixin eighttwenty {
+  @media (max-width: #{$eighttwenty}) {
+    @content;
+  }
+}
 @mixin md {
   @media (max-width: #{$md}) {
     @content;
@@ -35,6 +43,17 @@ $xxs: 375px;
     @content;
   }
 }
+@mixin fivehundred {
+  @media (max-width: #{$fivehundred}) {
+    @content;
+  }
+}
+@mixin fourseventyfive {
+  @media (max-width: #{$fourseventyfive}) {
+    @content;
+  }
+}
+
 @mixin xs {
   @media (max-width: #{$xs}) {
     @content;

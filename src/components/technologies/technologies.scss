@@ -15,13 +15,15 @@
 
     @include md {
       font-size: 40px;
-      margin: 100px 10px;
+      margin-top: 80px;
+      margin-bottom: 0px;
     }
-    @include sm {
+    @include fivehundred {
       font-size: 30px;
     }
-    @include xs {
-      margin: 150px 10px 50px;
+    @include xxs {
+      margin-left: 15px;
+      margin-right: 15px;
     }
   }
   .container {
@@ -33,9 +35,8 @@
     justify-content: center;
     overflow: hidden;
     margin-left: 75px;
-    @include md {
-      justify-content: flex-start;
-      height: fit-content;
+
+    @include eighttwenty {
       margin-left: 0px;
     }
 
@@ -44,9 +45,13 @@
       height: fit-content;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
       padding: 10px;
       overflow: hidden;
+
+      @include md {
+        grid-template-columns: repeat(3, minmax(80px, 1fr));
+      }
 
       .item {
         width: 120px;
@@ -60,18 +65,18 @@
         transition: all 1s ease;
         opacity: 1;
 
-        &:hover {
-          transform: scale(1.1);
-          opacity: 0.85;
-        }
-
         @include md {
+          width: 80px;
+          height: 80px;
+        }
+        @include xxs {
           width: 60px;
           height: 60px;
         }
-        @include xs {
-          width: 50px;
-          height: 50px;
+
+        &:hover {
+          transform: scale(1.1);
+          opacity: 0.85;
         }
 
         &:nth-child(4),
@@ -81,32 +86,29 @@
           width: 150px;
           height: 150px;
 
-          @include xl {
-            width: 190px;
-            height: 190px;
-            margin-left: 120px;
-          }
           @include md {
             width: 80px;
             height: 80px;
-            margin-left: 45px;
-          }
-          @include xs {
-            width: 60px;
-            height: 60px;
+            margin: 10px;
             margin-left: 40px;
           }
+          @include xxs {
+            margin-left: 0px;
+            width: 60px;
+            height: 60px;
+            margin-left: 20px;
+          }
+        }
+        img {
+          width: 90%;
+          object-fit: contain;
 
-          img {
-            width: 90%;
-            object-fit: contain;
-
-            #react {
-              color: aqua;
-            }
+          #react {
+            color: aqua;
           }
         }
       }
     }
   }
 }
+// }
