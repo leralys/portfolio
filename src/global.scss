@@ -7,15 +7,15 @@ $lightColor: #feffff;
 $lightGreyColor: #d5d5d5;
 
 // breakpoints
-$xl: 1280px;
+$xl: 1280px; //big screens
 $lg: 1024px;
-$eighttwenty: 820px;
-$md: 768px;
+$eighttwenty: 820px; //big tablet
+$md: 768px; //tablet
 $sm: 600px;
 $fivehundred: 500px;
 $fourseventyfive: 475px;
-$xs: 425px;
-$xxs: 375px;
+$xs: 425px; //mobile
+$xxs: 375px; //small screens
 
 // mixins for responsive layout
 @mixin xl {

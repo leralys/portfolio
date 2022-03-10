@@ -1,9 +1,17 @@
+:root {
+  --posX: 0;
+  --posY: 0;
+}
 .app {
   height: 100vh;
+  * > {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   .sections {
     width: 100%;
     height: calc(100vh - 70px);
-    background-color: bisque;
     position: relative;
     top: 70px;
     scroll-behavior: smooth;
