@@ -10,8 +10,8 @@ import downArrow from '../../assets/images/downArrow.png';
 import "./portfolio.scss"
 
 const Portfolio = ({ menuOpen }) => {
-    const ref = useRef();
-    const { inViewport } = useInViewport(ref);
+    const portfolioAnim = useRef();
+    const { inViewport } = useInViewport(portfolioAnim);
 
     if (inViewport && !menuOpen) {
         slideIn(".slideIn");
@@ -53,8 +53,7 @@ const Portfolio = ({ menuOpen }) => {
     };
     return (
         <div className="portfolio" id="portfolio">
-            <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
-                ref={ref}>
+            <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}vw)` }} ref={portfolioAnim}>
                 {data.map((d) => (
                     <div className="container" key={d.id}>
                         <div className="item">

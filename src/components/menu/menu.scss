@@ -1,42 +1,80 @@
 @import "../../global.scss";
+
 .menu {
   width: 300px;
   height: 100vh;
   background-color: $mainColor;
   position: fixed;
   top: 0;
-  right: -500px;
-  z-index: 2;
+  right: -1000px;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 1s ease;
 
-  @include sm {
+  &::before {
+    content: "";
+    position: fixed;
+    right: 0px;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.5;
+    z-index: -1;
+    visibility: hidden;
+  }
+
+  @include xs {
     width: 100vw;
   }
 
   &.active {
     right: 0;
+    &::before {
+      visibility: visible;
+      background-color: $darkColor;
+      transition: all 1s ease;
+    }
   }
+
   ul {
     list-style: none;
     font-size: 30px;
-    color: #feffff;
+    color: $lightColor;
     font-weight: 300;
     width: 60%;
     li {
       margin-bottom: 20px;
+
+      &.contact-hidden {
+        visibility: hidden;
+        @include md {
+          visibility: visible;
+          font-size: 18px;
+          display: flex;
+          flex-direction: column;
+          span {
+            margin-top: 20px;
+          }
+          .contact-type {
+            display: flex;
+            align-items: center;
+            .contact-icon {
+              margin-right: 8px;
+            }
+          }
+        }
+      }
       a {
         font-size: inherit;
         color: inherit;
         text-decoration: none;
-      }
-
-      &:hover {
-        color: #17252a;
-        transition: all 0.3s ease-out;
+        &:hover {
+          color: $darkColor;
+          transition: all 0.3s ease-out;
+        }
       }
     }
   }

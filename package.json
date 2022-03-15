@@ -16,8 +16,6 @@
     "react-in-viewport": "^1.0.0-alpha.20",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
-    "react-scroll-parallax": "^3.0.3",
-    "react-use": "^17.3.2",
     "sass": "^1.49.9",
     "web-vitals": "^2.1.4"
   },

@@ -7,7 +7,7 @@
   color: $darkColor;
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 5;
   transition: all 1s ease;
 
   .wrapper {
@@ -15,6 +15,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include md {
+      height: 100%;
+    }
 
     @include sm {
       width: 100%;
@@ -37,6 +41,7 @@
         }
         @include sm {
           margin-right: 40px;
+          color: $darkColor;
         }
         @include xs {
           font-size: 18px;
@@ -100,14 +105,14 @@
     .hamburger {
       span {
         &:first-child {
-          background-color: #feffff;
+          background-color: $lightColor;
           transform: rotate(45deg);
         }
         &:nth-child(2) {
           opacity: 0;
         }
         &:last-child {
-          background-color: #feffff;
+          background-color: $lightColor;
           transform: rotate(-45deg);
         }
       }
