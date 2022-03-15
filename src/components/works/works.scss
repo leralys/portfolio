@@ -2,43 +2,48 @@
 
 .works {
   height: calc(100vh - 70px);
-  background-color: #f3f3f3;
+  background-color: lightGreyColor2;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   h1 {
     font-size: 50px;
-    color: #17252a;
+    color: $darkColor;
     overflow: hidden;
-    height: 15%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    margin: 0 15px;
+    margin: 30px 15px;
+    opacity: 0;
     @include md {
       font-size: 40px;
     }
     @include fivehundred {
       font-size: 30px;
     }
+    @include sm {
+      margin-bottom: 10px;
+    }
   }
   .container {
     width: 70%;
-    height: 85%;
+    height: 75%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    overflow: hidden;
+    opacity: 0;
 
     @include xl {
-      width: 1200px;
+      width: 1000px;
     }
     @include eighttwenty {
       width: 100%;
+    }
+    @include sm {
+      height: calc(100% - 75px);
+      // width: 120%;
     }
     @include xs {
       align-items: flex-start;
@@ -62,14 +67,13 @@
 
       @include eighttwenty {
         width: 40%;
-        height: 200px;
+        height: 30%;
       }
       @include sm {
-        height: 150px;
-      }
-      @include xs {
-        width: 175px;
-        height: 120px;
+        width: 40%;
+        height: 25%;
+        border-radius: 10px;
+        align-self: stretch;
       }
       div {
         width: 90%;
@@ -101,6 +105,12 @@
         height: 100%;
         object-fit: cover;
         z-index: 1;
+
+        @include sm {
+          object-fit: cover;
+          object-position: 50% 50%;
+          border-radius: 10px;
+        }
       }
 
       &:hover {
