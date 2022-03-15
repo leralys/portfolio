@@ -1,7 +1,6 @@
-// import logoSmall from "../../assets/images/logoSmall.png";
 import "./navbar.scss"
-import PersonIcon from '@mui/icons-material/Person';
-import EmailIcon from '@mui/icons-material/Email';
+import PersonIcon from "@mui/icons-material/Person";
+import EmailIcon from "@mui/icons-material/Email";
 
 const Header = ({ menuOpen, setMenuOpen }) => {
     return (
@@ -9,7 +8,6 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             <div className="wrapper">
                 <div className="left">
                     <a href="#hero" className="logo">Lera Lysko</a>
-                    {/* <a href="#hero" className="logo"><img src={logoSmall} /></a> */}
                     <div className="itemContainer">
                         <PersonIcon className="icon" />
                         <span>+972 58 627 6306</span>

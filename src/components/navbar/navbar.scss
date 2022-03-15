@@ -3,8 +3,8 @@
 .navbar {
   width: 100%;
   height: 70px;
-  background-color: #fff;
-  color: #17252a;
+  background-color: #ffffff;
+  color: $darkColor;
   position: fixed;
   top: 0;
   z-index: 3;
@@ -16,6 +16,10 @@
     align-items: center;
     justify-content: space-between;
 
+    @include sm {
+      width: 100%;
+    }
+
     .left {
       display: flex;
       justify-content: center;
@@ -26,11 +30,35 @@
         text-decoration: none;
         color: inherit;
         margin-right: 40px;
+
+        @include md {
+          font-size: 20px;
+          margin-right: 20px;
+        }
+        @include sm {
+          margin-right: 40px;
+        }
+        @include xs {
+          font-size: 18px;
+          margin-right: 20px;
+        }
       }
       .itemContainer {
         display: flex;
         align-items: center;
         margin-left: 30px;
+
+        @include md {
+          margin-left: 0px;
+          margin-right: 10px;
+        }
+        @include sm {
+          margin-left: 0px;
+          margin-right: 40px;
+        }
+        @include xs {
+          margin-right: 20px;
+        }
 
         .icon {
           font-size: 18px;
@@ -39,6 +67,10 @@
         span {
           font-size: 16px;
           font-weight: 500;
+
+          @include sm {
+            display: none;
+          }
         }
       }
     }

@@ -1,3 +1,8 @@
+import { useRef } from "react";
+import { useInViewport } from "react-in-viewport";
+
+import { fadeIn } from "../../animations/fadeIn";
+
 import "./works.scss";
 
 const worksArr = [
@@ -37,12 +42,16 @@ const worksArr = [
 ]
 
 
-const Works = () => {
-
+const Works = ({ menuOpen }) => {
+    const worksFadeIn = useRef();
+    const { inViewport } = useInViewport(worksFadeIn);
+    if (inViewport && !menuOpen) {
+        fadeIn(".fadeIn");
+    }
     return (
         <div className="works" id="works">
-            <h1>More of my works</h1>
-            <div className="container">
+            <h1 className="fadeIn">More of my works</h1>
+            <div className="container fadeIn" ref={worksFadeIn}>
                 {worksArr.map(work => (
                     <div className="item" key={work.id}>
                         <img src={work.img} alt={work.name} />

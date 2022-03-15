@@ -14,10 +14,10 @@ const App = () => {
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className="sections">
-        <Hero />
-        <Portfolio />
-        <Works />
-        <Technologies />
+        <Hero menuOpen={menuOpen} />
+        <Portfolio menuOpen={menuOpen} />
+        <Works menuOpen={menuOpen} />
+        <Technologies menuOpen={menuOpen} />
       </div>
     </div>
   );
