@@ -1,16 +1,28 @@
 import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+import { notify } from "../../utilities/notify";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
 import "./navbar.scss";
 
-const notify = () => toast('Copied to clipboard!');
-
 const Header = ({ menuOpen, setMenuOpen }) => {
-    const [tel, seTel] = useState("+972 58 627 6306");
+    const [tel, seTel] = useState("+972586276306");
+    const [copied, setCopied] = useState(false);
+    const toaster = <Toaster containerStyle={{ top: 80 }}
+        toastOptions={{
+            className: "",
+            style: {
+                duration: 3000,
+                border: "1px solid #3aafa9",
+                padding: "10px",
+                color: "#17252a",
+                id: "tel"
+            },
+        }}
+    />
     const handleClick = () => {
-        // console.log(tel);
         navigator.clipboard.writeText(tel);
+        setCopied(true);
         notify();
     }
     return (
@@ -18,14 +30,17 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             <div className="wrapper">
                 <div className="left">
                     <a href="#hero" className="logo">Lera Lysko</a>
-                    <div className="itemContainer"
-                        onClick={handleClick}>
-                        <PersonIcon className="icon" />
-                        <span>{tel}</span>
+                    <div className="itemContainer">
+                        <span onClick={handleClick} className="itemWrapper">
+                            <PersonIcon className="icon" />
+                            <span>+972 58 627 6306</span>
+                        </span>
                     </div>
                     <div className="itemContainer">
-                        <EmailIcon className="icon" />
-                        <span>lyskolera@gmail.com</span>
+                        <a href="mailto:lyskolera@gmail.com" className="itemWrapper">
+                            <EmailIcon className="icon" />
+                            <span>lyskolera@gmail.com</span>
+                        </a>
                     </div>
                 </div>
                 <div className="right">
@@ -36,15 +51,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
                     </div>
                 </div>
             </div>
-            <Toaster containerStyle={{ top: 100 }}
-                toastOptions={{
-                    className: '',
-                    style: {
-                        border: '1px solid #3aafa9',
-                        padding: '10px',
-                        color: '#17252a',
-                    },
-                }} />
+            {copied ? toaster : null}
         </nav>
     )
 }

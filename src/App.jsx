@@ -5,6 +5,7 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Works from "./components/works/Works";
 import Technologies from "./components/technologies/Technologies";
 import Menu from "./components/menu/Menu";
+import Contact from "./components/contact/Contact";
 import "./app.scss";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Portfolio menuOpen={menuOpen} />
         <Works menuOpen={menuOpen} />
         <Technologies menuOpen={menuOpen} />
+        <Contact menuOpen={menuOpen} />
       </div>
     </div>
   );

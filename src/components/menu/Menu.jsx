@@ -1,8 +1,27 @@
-import PersonIcon from "@mui/icons-material/Person";
-import EmailIcon from "@mui/icons-material/Email";
+import { useState } from "react";
+import { Toaster } from "react-hot-toast";
+import { notify } from "../../utilities/notify";
 import "./menu.scss";
 
 const Menu = ({ menuOpen, setMenuOpen }) => {
+    const [tel, seTel] = useState("+972586276306");
+    const [copied, setCopied] = useState(false);
+    const toaster = <Toaster containerStyle={{ top: 80 }}
+        toastOptions={{
+            className: "",
+            style: {
+                duration: 1000,
+                padding: "10px",
+                color: "#17252a",
+                id: "tel"
+            },
+        }}
+    />
+    const handleClick = () => {
+        navigator.clipboard.writeText(tel);
+        setCopied(true);
+        notify();
+    }
     return (
         <div className={"menu " + (menuOpen ? "active" : "")}>
             <ul>
@@ -18,16 +37,18 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                 <li onClick={() => setMenuOpen(false)}>
                     <a href="#technologies">Technologies</a>
                 </li>
-                <li className="contact-hidden">
-                    <span className="contact-type"><PersonIcon className="contact-icon" /> tel.</span>
+                <li onClick={() => setMenuOpen(false)}>
+                    <a href="#contact">Contact me</a>
+                </li>
+                <li className="contact-hidden"
+                    onClick={handleClick}>
                     <span> +972 58 627 6306</span>
                 </li>
                 <li className="contact-hidden">
-                    <span className="contact-type"><EmailIcon className="contact-icon" /> e-mail</span>
-                    <span> lyskolera@gmail.com</span>
+                    <li> lyskolera@gmail.com</li>
                 </li>
             </ul>
-            {/* <div className={"layer " + (menuOpen ? "active" : "")}></div> */}
+            {copied ? toaster : null}
         </div>
     )
 }

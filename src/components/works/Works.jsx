@@ -1,8 +1,6 @@
 import { useRef } from "react";
 import { useInViewport } from "react-in-viewport";
-
 import { fadeIn } from "../../animations/fadeIn";
-
 import "./works.scss";
 
 const worksArr = [
@@ -26,6 +24,7 @@ const worksArr = [
         id: 4,
         name: "Star Wars Search App",
         href: "https://github.com/leralys/DI_Bootcamp/tree/main/MiniProject_StarWarsWebApp",
+        demo: "https://codepen.io/leralys/full/vYeVjPW",
         img: "/works/starWarsSearchApp.png"
     }, {
         id: 5,
@@ -69,6 +68,6 @@ const Works = ({ menuOpen }) => {
                 ))}
             </div>
         </div>
-    )
+    );
 }
 export default Works;
