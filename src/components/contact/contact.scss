@@ -8,7 +8,6 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 
   h1 {
     font-size: 50px;
@@ -27,13 +26,12 @@
     }
   }
   .container {
-    width: 75%;
+    width: 60%;
     height: 60%;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
-    margin-bottom: 20px;
-    // background-color: coral;
+    justify-content: flex-start;
+    overflow: hidden;
     .left {
       flex: 1;
       img {
@@ -43,12 +41,10 @@
     }
     .right {
       flex: 1;
-      //   border: 1px solid red;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      //   width: 400px;
       form {
         height: 380px;
         margin-top: 30px;
@@ -88,6 +84,7 @@
     }
   }
   .footer {
+    margin-top: 100px;
     width: 100vw;
     height: 12%;
     background-color: $darkColor;

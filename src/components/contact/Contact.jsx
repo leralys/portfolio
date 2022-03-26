@@ -26,7 +26,11 @@ const Contact = ({ menuOpen }) => {
                     </form>
                 </div>
             </div>
-            <footer className="footer"></footer>
+            <footer className="footer">
+                <div className="icons">
+
+                </div>
+            </footer>
         </div>
     );
 }
