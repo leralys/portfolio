@@ -5,7 +5,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
 import "./navbar.scss";
 
-const Header = ({ menuOpen, setMenuOpen }) => {
+const Navbar = ({ menuOpen, setMenuOpen }) => {
     const [tel, seTel] = useState("+972586276306");
     const [copied, setCopied] = useState(false);
     const toaster = <Toaster containerStyle={{ top: 80 }}
@@ -55,4 +55,4 @@ const Header = ({ menuOpen, setMenuOpen }) => {
         </nav>
     )
 }
-export default Header;
+export default Navbar;

@@ -8,20 +8,23 @@
   align-items: center;
 
   h1 {
-    font-size: 50px;
+    font-size: 40px;
     color: $darkColor;
     overflow: hidden;
     text-align: center;
     margin: 30px 15px;
     opacity: 0;
     @include md {
-      font-size: 40px;
+      font-size: 30px;
     }
     @include fivehundred {
-      font-size: 30px;
+      font-size: 25px;
     }
     @include sm {
       margin-bottom: 10px;
+    }
+    @include xs {
+      margin: 20px 10px 10px;
     }
   }
   .container {
@@ -42,8 +45,8 @@
       width: 100%;
     }
     @include sm {
-      height: calc(100% - 75px);
-      // width: 120%;
+      height: calc(90% - 75px);
+      width: 120%;
     }
     @include xs {
       align-items: flex-start;

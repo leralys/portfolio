@@ -43,15 +43,15 @@ const worksArr = [
 
 
 const Works = ({ menuOpen }) => {
-    const worksFadeIn = useRef();
-    const { inViewport } = useInViewport(worksFadeIn);
+    const worksRef = useRef();
+    const { inViewport } = useInViewport(worksRef);
     if (inViewport && !menuOpen) {
         fadeIn(".fadeIn");
     }
     return (
         <div className="works" id="works">
             <h1 className="fadeIn">More of my works</h1>
-            <div className="container fadeIn" ref={worksFadeIn}>
+            <div className="container fadeIn" ref={worksRef}>
                 {worksArr.map(work => (
                     <div className="item" key={work.id}>
                         <img src={work.img} alt={work.name} />

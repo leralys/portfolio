@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useInViewport } from "react-in-viewport";
 
 import { fadeIn } from "../../animations/fadeIn";
+import { scale } from "../../animations/scale";
 
 import css from "../../assets/images/technologies/css.png";
 import html from "../../assets/images/technologies/html.png";
@@ -20,19 +21,20 @@ import "./technologies.scss";
 const tech = [html, css, js, react, redux, sass, postgres, nodejs, express, git, gsap];
 
 const Technologies = ({ menuOpen }) => {
-    const techFadeIn = useRef();
-    const { inViewport } = useInViewport(techFadeIn);
+    const techRef = useRef();
+    const { inViewport } = useInViewport(techRef);
     if (inViewport && !menuOpen) {
         fadeIn(".fadeIn");
+        scale(".scale");
     }
     return (
         <div className="technologies" id="technologies">
             <h1 className="fadeIn">Technologies that I use</h1>
             <div className="container fadeIn">
-                <div className="grid" ref={techFadeIn}>
+                <div className="grid scale" ref={techRef}>
                     {tech.map((el, i) => (
                         <div className="item" key={i}>
-                            <img src={tech[i]} alt={`${tech[i]}`} />
+                            <img src={tech[i]} alt={`${tech[i]}-logo`} />
                         </div>
                     ))}
                 </div>
