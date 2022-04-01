@@ -4,6 +4,7 @@ import { useInViewport } from "react-in-viewport";
 
 import { fade } from "../../animations/fade";
 import { slideIn } from "../../animations/slideIn";
+import { fadeIn } from "../../animations/fadeIn";
 
 import downArrow from '../../assets/images/downArrow.png';
 
@@ -16,6 +17,7 @@ const Portfolio = ({ menuOpen }) => {
     if (inViewport && !menuOpen) {
         slideIn(".slideIn");
         fade(".fade");
+        fadeIn(".fadeIn");
     }
 
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -56,7 +58,7 @@ const Portfolio = ({ menuOpen }) => {
             <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}vw)` }} ref={portfolioAnim}>
                 {data.map((d) => (
                     <div className="container" key={d.id}>
-                        <div className="item">
+                        <div className="item fadeIn">
                             <div className="left">
                                 <div className="leftContainer">
                                     <div className="imgContainer">

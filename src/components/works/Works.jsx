@@ -32,7 +32,8 @@ const worksArr = [
         href: "https://github.com/leralys/calculator",
         demo: "https://codepen.io/leralys/full/jOBrNbL",
         img: "/works/javaScriptCalculator.png"
-    }, {
+    },
+    {
         id: 6,
         name: "ToDo App",
         href: "https://github.com/leralys/DI_Bootcamp/tree/main/MiniProject_SpecialToDoList",

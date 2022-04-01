@@ -33,6 +33,9 @@
           margin-right: 20px;
           font-size: 24px;
         }
+        @include xxs {
+          font-size: 20px;
+        }
       }
 
       .itemContainer {
@@ -88,7 +91,7 @@
           height: 4px;
           background-color: $mainColor;
           transform-origin: left;
-          transition: all 2s ease;
+          transition: all 1.2s ease;
         }
       }
     }

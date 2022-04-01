@@ -22,6 +22,9 @@
     @include sm {
       margin: 50px 10px;
     }
+    @include xxs {
+      font-size: 25px;
+    }
   }
 
   .container {
@@ -44,7 +47,7 @@
       height: fit-content;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
       padding: 50px;
       overflow: hidden;
 
@@ -64,8 +67,8 @@
       }
 
       .item {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         border: 1px solid $lightGreyColor2;
         padding: 10px;
@@ -75,7 +78,15 @@
         box-shadow: 0.2rem 0.2rem 0.5rem 0.25rem $lightGreyColor2;
         transition: all 1s ease;
 
+        // @include eighttwenty {
+        //   width: 80px;
+        //   height: 80px;
+        // }
         @include eighttwenty {
+          margin-top: 20px;
+        }
+        @include sm {
+          margin-top: 0px;
           width: 80px;
           height: 80px;
         }
@@ -83,14 +94,15 @@
           width: 60px;
           height: 60px;
         }
-
         &:nth-child(4),
         &:nth-child(5),
-        &:nth-child(6) {
+        &:nth-child(6),
+        &:nth-child(10),
+        &:last-child {
           margin-left: 90px;
 
-          @include md {
-            margin-left: 40px;
+          @include eighttwenty {
+            margin-left: 60px;
           }
           @include sm {
             margin-left: 0px;
@@ -107,12 +119,12 @@
             margin-left: 60px;
           }
         }
-        &:nth-child(9) {
+        &:last-child {
           @include sm {
-            transform: translateX(160px);
+            transform: translateX(80px);
           }
           @include xxs {
-            transform: translateX(120px);
+            transform: translateX(60px);
           }
         }
         img {

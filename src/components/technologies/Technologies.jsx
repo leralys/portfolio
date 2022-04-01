@@ -12,10 +12,12 @@ import redux from "../../assets/images/technologies/redux.svg";
 import sass from "../../assets/images/technologies/sass.png";
 import nodejs from "../../assets/images/technologies/nodejs.png";
 import express from "../../assets/images/technologies/express.png";
+import gsap from "../../assets/images/technologies/gsap.png";
+import git from "../../assets/images/technologies/git.png";
 
 import "./technologies.scss";
 
-const tech = [css, html, sass, js, react, redux, postgres, nodejs, express];
+const tech = [html, css, js, react, redux, sass, postgres, nodejs, express, git, gsap];
 
 const Technologies = ({ menuOpen }) => {
     const techFadeIn = useRef();

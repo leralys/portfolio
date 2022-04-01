@@ -17,8 +17,8 @@ const App = () => {
       <div className="sections">
         <Hero menuOpen={menuOpen} />
         <Portfolio menuOpen={menuOpen} />
-        <Works menuOpen={menuOpen} />
         <Technologies menuOpen={menuOpen} />
+        <Works menuOpen={menuOpen} />
         <Contact menuOpen={menuOpen} />
       </div>
     </div>

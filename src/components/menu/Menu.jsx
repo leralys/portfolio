@@ -32,10 +32,10 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                     <a href="#portfolio">Projects</a>
                 </li>
                 <li onClick={() => setMenuOpen(false)}>
-                    <a href="#works">Works</a>
+                    <a href="#technologies">Technologies</a>
                 </li>
                 <li onClick={() => setMenuOpen(false)}>
-                    <a href="#technologies">Technologies</a>
+                    <a href="#works">Works</a>
                 </li>
                 <li onClick={() => setMenuOpen(false)}>
                     <a href="#contact">Contact me</a>
@@ -45,7 +45,7 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                     <span> +972 58 627 6306</span>
                 </li>
                 <li className="contact-hidden">
-                    <li> lyskolera@gmail.com</li>
+                    <span> lyskolera@gmail.com</span>
                 </li>
             </ul>
             {copied ? toaster : null}

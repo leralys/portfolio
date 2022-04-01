@@ -10,15 +10,15 @@ $lightRedColor: rgba(242, 111, 84, 0.5);
 $redColor: #f2545b;
 
 // breakpoints
-$xl: 1280px; //big screens
-$lg: 1024px;
+$xl: 1280px; //largest screens
+$lg: 1024px; //computer
 $eighttwenty: 820px; //big tablet
 $md: 768px; //tablet
-$sm: 600px;
-$fivehundred: 500px;
-$fourseventyfive: 475px;
-$xs: 425px; //mobile
-$xxs: 375px; //small screens
+$sm: 600px; //landscape phone
+$fivehundred: 500px; //landscape phone
+$fourseventyfive: 475px; //phone
+$xs: 425px; //phone
+$xxs: 375px; //smallest screens
 
 // mixins for responsive layout
 @mixin xl {
@@ -67,11 +67,3 @@ $xxs: 375px; //small screens
     @content;
   }
 }
-
-/* #b4e0e8 blue header*/
-/* #f7f7f7 grey header*/
-/* #eff7fa blue background */
-/* #f3f3f3 grey background */
-/* #fcfcfc grey section*/
-/* #eef4e8 green background */
-/* yellow background #fef7db */

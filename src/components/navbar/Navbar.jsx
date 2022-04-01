@@ -20,7 +20,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             },
         }}
     />
-    const handleClick = () => {
+    const handleClick = (e) => {
         navigator.clipboard.writeText(tel);
         setCopied(true);
         notify();
@@ -31,7 +31,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
                 <div className="left">
                     <a href="#hero" className="logo">Lera Lysko</a>
                     <div className="itemContainer">
-                        <span onClick={handleClick} className="itemWrapper">
+                        <span onClick={(e) => handleClick(e)} className="itemWrapper">
                             <PersonIcon className="icon" />
                             <span>+972 58 627 6306</span>
                         </span>
