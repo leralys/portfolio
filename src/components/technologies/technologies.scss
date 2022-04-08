@@ -20,11 +20,8 @@
       margin: 50px 10px;
       font-size: 25px;
     }
-    // @include sm {
-    //   margin: 50px 10px;
-    // }
     @include xs {
-      margin: 20px 10px 30px;
+      margin: 20px 10px 50px;
     }
     @include xxs {
       font-size: 25px;
@@ -70,7 +67,7 @@
       }
       @include sm {
         grid-template-columns: repeat(2, minmax(80px, 1fr));
-        padding: 15px;
+        padding: 10px;
       }
 
       .item {
@@ -92,6 +89,10 @@
           margin-top: 0px;
           width: 80px;
           height: 80px;
+        }
+        @include xs {
+          width: 70px;
+          height: 70px;
         }
         @include xxs {
           width: 60px;

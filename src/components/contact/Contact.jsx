@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { useInViewport } from "react-in-viewport";
+import { SizeContext } from '../../App';
 import { yoyo } from "../../animations/yoyo";
 import { fadeIn } from "../../animations/fadeIn";
 
@@ -14,7 +15,8 @@ import "./contact.scss";
 const Contact = ({ menuOpen }) => {
     const imgRef = useRef();
     const { inViewport } = useInViewport(imgRef);
-    if (inViewport && !menuOpen && window.innerWidth >= 820) {
+    const isComputer = useContext(SizeContext);
+    if (inViewport && !menuOpen && isComputer) {
         yoyo(".yoyo");
         fadeIn(".fadeIn");
     }

@@ -1,9 +1,9 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { useInViewport } from "react-in-viewport";
 
 import { fadeIn } from "../../animations/fadeIn";
 import { scale } from "../../animations/scale";
-// import { SizeContext } from '../../App';
+import { SizeContext } from '../../App';
 
 import css from "../../assets/images/technologies/css.png";
 import html from "../../assets/images/technologies/html.png";
@@ -25,10 +25,12 @@ const Technologies = ({ menuOpen }) => {
     const techRef = useRef();
     const { inViewport } = useInViewport(techRef);
 
-    // const isComputer = useContext(SizeContext);
-    if (inViewport && !menuOpen) {
+    const isComputer = useContext(SizeContext);
+    if (inViewport && !menuOpen && isComputer) {
         fadeIn(".fadeIn");
         scale(".scale");
+    } else {
+        fadeIn(".fadeIn");
     }
     return (
         <div className="technologies" id="technologies">

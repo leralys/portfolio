@@ -13,15 +13,17 @@ export const SizeContext = createContext(null);
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isComputer, setIsComputer] = useState(false);
+  const [height, setHeight] = useState(0);
   useEffect(() => {
     window.innerWidth > 768 ? setIsComputer(true) : setIsComputer(false);
+    setHeight(window.innerHeight - 70);
   }, []);
   return (
     <SizeContext.Provider value={isComputer}>
       <div className="app">
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <div className="sections">
+        <div className="sections" style={{ maxHeight: `${height}px` }}>
           <Hero menuOpen={menuOpen} />
           <Portfolio menuOpen={menuOpen} />
           <Works menuOpen={menuOpen} />

@@ -11,9 +11,7 @@ const Portfolio = ({ menuOpen }) => {
     const { inViewport } = useInViewport(portfolioRef);
     const isComputer = useContext(SizeContext);
 
-    if (inViewport && !menuOpen && !isComputer) {
-        slideIn(".slideIn");
-    } else {
+    if (inViewport && !menuOpen && isComputer) {
         slideIn(".slideIn");
         fade(".fade");
     }
