@@ -3,6 +3,7 @@ import { useInViewport } from "react-in-viewport";
 
 import { fadeIn } from "../../animations/fadeIn";
 import { scale } from "../../animations/scale";
+// import { SizeContext } from '../../App';
 
 import css from "../../assets/images/technologies/css.png";
 import html from "../../assets/images/technologies/html.png";
@@ -23,6 +24,8 @@ const tech = [html, css, js, react, redux, sass, postgres, nodejs, express, git,
 const Technologies = ({ menuOpen }) => {
     const techRef = useRef();
     const { inViewport } = useInViewport(techRef);
+
+    // const isComputer = useContext(SizeContext);
     if (inViewport && !menuOpen) {
         fadeIn(".fadeIn");
         scale(".scale");

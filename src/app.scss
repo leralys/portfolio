@@ -1,9 +1,12 @@
+@import "./global.scss";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 .app {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
 }
 .sections {
@@ -15,6 +18,11 @@
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   scrollbar-width: none; //firefox
+
+  // @include md {
+  //   scroll-snap-type: none;
+  //   overflow-y: visible;
+  // }
   //other browsers
   &::-webkit-scrollbar {
     display: none;
@@ -22,7 +30,6 @@
 
   > * {
     width: 100%;
-    height: calc(100vh - 70px);
     scroll-snap-align: start;
   }
 }

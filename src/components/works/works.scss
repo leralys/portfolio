@@ -1,12 +1,12 @@
 @import "../../global.scss";
 
 .works {
-  height: calc(100vh - 70px);
-  background-color: lightGreyColor2;
+  background-color: $lightGreyColor2;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  height: 100%;
+  overflow-y: hide;
   h1 {
     font-size: 40px;
     color: $darkColor;
@@ -63,10 +63,10 @@
       color: $lightBlueColor;
       position: relative;
 
-      @include xl {
-        width: 280px;
-        height: 180px;
-      }
+      // @include xl {
+      //   width: 280px;
+      //   height: 180px;
+      // }
 
       @include eighttwenty {
         width: 40%;

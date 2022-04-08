@@ -1,5 +1,8 @@
 import { useRef } from "react";
 import { useInViewport } from "react-in-viewport";
+
+// import { SizeContext } from '../../App';
+
 import { fadeIn } from "../../animations/fadeIn";
 import "./works.scss";
 
@@ -45,6 +48,8 @@ const worksArr = [
 const Works = ({ menuOpen }) => {
     const worksRef = useRef();
     const { inViewport } = useInViewport(worksRef);
+    // const isComputer = useContext(SizeContext);
+
     if (inViewport && !menuOpen) {
         fadeIn(".fadeIn");
     }

@@ -1,12 +1,12 @@
 import photo from "../../assets/images/photo.jpg";
-import bracketsSign from "../../assets/images/bracketsSign.png";
+// import bracketsSign from "../../assets/images/bracketsSign.png";
 import downArrow from "../../assets/images/downArrow.png";
 import "./hero.scss";
 const Hero = () => {
     return (
         <div className="hero" id="hero">
             <div className="left">
-                <img src={bracketsSign} alt="Brackets sign" />
+                {/* <img src={bracketsSign} alt="Brackets sign" /> */}
                 <div className="imgContainer">
                     <img id="photo" src={photo} alt="Lera Lysko Full Stack Developer" />
                 </div>

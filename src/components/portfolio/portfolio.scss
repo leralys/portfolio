@@ -1,25 +1,41 @@
 @import "../../global.scss";
 
 .portfolio {
-  background-color: #3aafa99b;
+  background-color: $lightGreyColor2;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  height: calc(100vh - 70px);
+  overflow-y: hide;
+  margin-top: 140px;
+  overflow-y: hidden;
+
+  @include md {
+    justify-content: flex-start;
+  }
 
   .arrow {
-    height: 50px;
+    height: 40px;
     position: absolute;
     cursor: pointer;
 
     @include lg {
-      display: none;
+      height: 25px;
     }
+
     &.left {
       margin-left: 10px;
       left: 0px;
       transform: rotate(90deg);
       @include xl {
+        left: 100px;
+      }
+      @include md {
+        bottom: 150px;
+        left: 200px;
+      }
+      @include fivehundred {
         left: 100px;
       }
     }
@@ -30,93 +46,71 @@
       @include xl {
         right: 100px;
       }
+      @include md {
+        bottom: 150px;
+        right: 200px;
+      }
+      @include fivehundred {
+        right: 100px;
+      }
     }
   }
 
   .slider {
-    height: 500px;
+    height: 450px;
     display: flex;
     position: absolute;
+
     left: 0;
     transition: all 1s ease-out;
 
-    @include lg {
-      height: calc(100vh - 160px);
-      flex-direction: column;
-      justify-content: space-evenly;
-      // background-color: chartreuse;
+    @include md {
+      height: 90vh;
+      top: 20;
     }
-    // @include md {
-    // }
-
     .container {
       width: 100vw;
       display: flex;
-      align-items: center;
+      align-items: space-between;
       justify-content: center;
       overflow: hidden;
-      @include lg {
-        align-items: flex-start;
-      }
+      padding: 10px;
 
       .item {
-        width: 900px;
+        width: 800px;
         height: 100%;
         background-color: $lightColor;
         border-radius: 20px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-
+        border: 1px solid $lightGreyColor;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         @include lg {
-          width: 90%;
-          height: 90%;
+          width: 700px;
+          height: 70%;
         }
         @include md {
-          height: 220px;
-          margin: 15px 0;
-        }
-        @include xs {
-          height: 165px;
-          margin: 8px 0;
+          flex-direction: column-reverse;
         }
 
         .left {
-          flex: 5;
-          height: 90%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding-right: 5px;
-        }
-
-        .leftContainer {
-          width: 88%;
-          height: 90%;
+          flex: 4;
           display: flex;
           flex-direction: column;
-          justify-content: flex-end;
-          z-index: 1;
+          justify-content: space-between;
+          padding-right: 5px;
+          padding: 30px;
 
-          @include lg {
-            height: 95%;
+          @include md {
+            font-size: 18px;
+            padding: 20px;
           }
 
-          > * {
-            margin-bottom: 20px;
-            @include lg {
-              margin-bottom: 15px;
-            }
-            @include xs {
-              margin-bottom: 10px;
-            }
-          }
-
-          .imgContainer {
+          .iconImg {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: $lightRedColor;
+            border: 2px solid $lightGreyColor;
+            background-color: $lightGreyColor2;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -124,7 +118,6 @@
             @include md {
               display: none;
             }
-
             img {
               width: 25px;
             }
@@ -132,68 +125,69 @@
 
           h2 {
             font-size: 25px;
-            @include lg {
-              font-size: 20px;
-              overflow: hidden;
-            }
-            @include xs {
-              font-size: 16px;
-            }
+          }
+          @include sm {
+            font-size: 20px;
+          }
+          @include xxs {
+            font-size: 16px;
+            line-height: 1;
           }
           p {
             font-size: 20px;
-            @include lg {
-              font-size: 16px;
-              overflow: hidden;
-            }
-            @include eighttwenty {
-              display: none;
-            }
           }
           .links {
-            font-size: 22px;
-            font-weight: 600;
+            font-size: 24px;
+            font-weight: 700;
             text-decoration: underline;
             display: flex;
             justify-content: space-between;
             width: 75%;
 
-            @include lg {
-              font-size: 20px;
+            @include md {
+              width: 100%;
+              justify-content: space-around;
+              font-size: 30px;
             }
-            @include xs {
-              font-size: 16px;
-              flex-direction: column;
-            }
+
             a {
-              color: inherit;
+              color: $mainColor;
               text-decoration: none;
               color: $darkCyanColor;
               transition: all 0.3s ease;
-              &:hover {
-                color: $redColor;
-              }
             }
           }
         }
 
         .right {
-          overflow: hidden;
-          flex: 7;
           height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-
+          overflow: hidden;
+          flex: 6;
+          @include xs {
+            flex: 4;
+          }
           img {
-            border-radius: 5px;
-            width: 95%;
+            border-radius: 12px;
+            padding: 10px;
+            height: 100%;
+            width: 100%;
             object-fit: cover;
-            transform: rotate(-10deg);
+            object-position: 10% 10%;
 
-            @include lg {
-              object-fit: fill;
+            @include md {
+              padding: 0px;
+              object-position: 10% 50%;
             }
+            @include sm {
+              border-radius: 0px;
+            }
+
+            // &:nth-of-type(3) {
+            //   @include md {
+            //     padding: 0px;
+            //     object-position: 0% 25%;
+            //   }
+            // }
           }
         }
       }

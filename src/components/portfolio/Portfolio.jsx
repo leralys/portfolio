@@ -1,23 +1,21 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 import { useInViewport } from "react-in-viewport";
-
-
+import { SizeContext } from '../../App';
 import { fade } from "../../animations/fade";
 import { slideIn } from "../../animations/slideIn";
-import { fadeIn } from "../../animations/fadeIn";
-
 import downArrow from '../../assets/images/downArrow.png';
-
 import "./portfolio.scss"
 
 const Portfolio = ({ menuOpen }) => {
     const portfolioRef = useRef();
     const { inViewport } = useInViewport(portfolioRef);
+    const isComputer = useContext(SizeContext);
 
-    if (inViewport && !menuOpen) {
+    if (inViewport && !menuOpen && !isComputer) {
+        slideIn(".slideIn");
+    } else {
         slideIn(".slideIn");
         fade(".fade");
-        fadeIn(".fadeIn");
     }
 
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -48,28 +46,27 @@ const Portfolio = ({ menuOpen }) => {
             demo: "https://codepen.io/leralys/full/MWEGZga"
         }
     ];
-    const handleClick = (way) => {
+    const handleClick = way => {
         way === "left"
             ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
             : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
     };
     return (
         <div className="portfolio" id="portfolio">
+            {/* <h1>Recent projects</h1> */}
             <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}vw)` }} ref={portfolioRef}>
                 {data.map((d) => (
                     <div className="container" key={d.id}>
-                        <div className="item fadeIn">
+                        <div className="item">
                             <div className="left">
-                                <div className="leftContainer">
-                                    <div className="imgContainer">
-                                        <img className="slideIn" src={d.icon} alt="icon" />
-                                    </div>
-                                    <h2 className="slideIn">{d.title}</h2>
-                                    <p className="slideIn">{d.desc}</p>
-                                    <div className="links">
-                                        <a href={d.demo} target="_blank" rel="noreferrer">Demo</a>
-                                        <a href={d.code} target="_blank" rel="noreferrer">Code</a>
-                                    </div>
+                                <div className="iconImg">
+                                    <img className="slideIn" src={d.icon} alt="icon" />
+                                </div>
+                                <h2 className="slideIn">{d.title}</h2>
+                                <p className="slideIn">{d.desc}</p>
+                                <div className="links">
+                                    <a href={d.demo} target="_blank" rel="noreferrer">Demo</a>
+                                    <a href={d.code} target="_blank" rel="noreferrer">Code</a>
                                 </div>
                             </div>
                             <div className="right fade">

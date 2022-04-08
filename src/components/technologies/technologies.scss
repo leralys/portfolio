@@ -5,28 +5,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  height: 100%;
+  overflow-y: hide;
   h1 {
     font-size: 40px;
     color: $darkColor;
     overflow: hidden;
     text-align: center;
     margin: 30px 15px;
-    opacity: 0;
     @include md {
       font-size: 30px;
     }
     @include fivehundred {
+      margin: 50px 10px;
       font-size: 25px;
     }
-    @include sm {
-      margin: 50px 10px;
-    }
+    // @include sm {
+    //   margin: 50px 10px;
+    // }
     @include xs {
       margin: 20px 10px 30px;
     }
     @include xxs {
       font-size: 25px;
+      margin: 50px 10px 20px;
     }
   }
 
@@ -39,10 +41,12 @@
     justify-content: center;
     overflow: hidden;
     margin-bottom: 20px;
-    opacity: 0;
 
     @include eighttwenty {
       justify-content: flex-start;
+    }
+    @include xxs {
+      justify-content: center;
     }
 
     .grid {
@@ -81,10 +85,6 @@
         box-shadow: 0.2rem 0.2rem 0.5rem 0.25rem $lightGreyColor2;
         transition: all 1s ease;
 
-        // @include eighttwenty {
-        //   width: 80px;
-        //   height: 80px;
-        // }
         @include eighttwenty {
           margin-top: 20px;
         }

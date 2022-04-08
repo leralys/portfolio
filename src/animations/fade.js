@@ -7,6 +7,7 @@ export const fade = el => {
         ease: "circ.out",
     }, {
         opacity: 1,
+        x: 0,
         y: 0,
         duration: 1.5,
     });

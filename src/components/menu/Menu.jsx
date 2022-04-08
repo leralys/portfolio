@@ -1,27 +1,8 @@
-import { useState } from "react";
-import { Toaster } from "react-hot-toast";
-import { notify } from "../../utilities/notify";
 import "./menu.scss";
 
 const Menu = ({ menuOpen, setMenuOpen }) => {
-    const [tel, seTel] = useState("+972586276306");
-    const [copied, setCopied] = useState(false);
-    const toaster = <Toaster containerStyle={{ top: 80 }}
-        toastOptions={{
-            className: "",
-            style: {
-                duration: 1000,
-                padding: "10px",
-                color: "#17252a",
-                id: "tel"
-            },
-        }}
-    />
-    const handleClick = () => {
-        navigator.clipboard.writeText(tel);
-        setCopied(true);
-        notify();
-    }
+    const tel = "+972586276306";
+
     return (
         <div className={"menu " + (menuOpen ? "active" : "")}>
             <ul>
@@ -40,16 +21,16 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                 <li onClick={() => setMenuOpen(false)}>
                     <a href="#contact">Contact me</a>
                 </li>
-                <li className="contact-hidden"
-                    onClick={handleClick}>
-                    <span> +972 58 627 6306</span>
+                <li className="contact-hidden">
+                    <a href={`tel:${tel}`}>+972 58 627 6306</a>
                 </li>
                 <li className="contact-hidden">
-                    <span> lyskolera@gmail.com</span>
+                    <a href="mailto:lyskolera@gmail.com" className="itemWrapper">
+                        lyskolera@gmail.com
+                    </a>
                 </li>
             </ul>
-            {copied ? toaster : null}
-        </div>
+        </div >
     )
 }
 export default Menu;
